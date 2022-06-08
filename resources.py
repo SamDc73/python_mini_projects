@@ -11,6 +11,7 @@ import distro  # Check distro name to Know How to count the installed packages
 import time
 
 # TODO: Pesentage option and number option for swap and memory
+# WARNING: The ram function is giving unaccurate numbers !
 
 # Network
 def ping():  # checks if there is a connection
@@ -79,7 +80,7 @@ def swap():
 # Battery
 def battery():
     if psutil.sensors_battery() is not None:
-        return psutil.sensors_battery()[0]
+        return int(psutil.sensors_battery()[0])
     else:
         return "This Device Don't have a Battery"
 
